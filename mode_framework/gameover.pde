@@ -2,6 +2,10 @@
 void gameover(){
 background(255,0,0);
 music.pause();
+
+if (mode!=gameover){
+  gameOver.pause();}
+  gameOver.play();
 textSize(100);
 text("Game Over",400,250);
 tactileRect(250,480,500,545,lightblue,orange,blue,white);
@@ -14,12 +18,12 @@ rect(150,575,500,65);
 textSize(50);
 fill(0);
 textFill(250,480,500,545,blue,0);
-text("Play Again",400,500);
+text("Play Again",400,500);//button to play again
 textFill(150,575,550,640,blue,0);
-text("Back To Start Screen",400,600);
+text("Back To Start Screen",400,600);//button to return to start screen
 fill(0);
 textSize(75);
-text("Highscore:"+highscore,400,700);
+text("Highscore:"+highscore,400,700);//highscore
 }
 void gameOverClicks(){
   if (mouseX > 250 && mouseX < 550 && mouseY > 480 && mouseY < 545){

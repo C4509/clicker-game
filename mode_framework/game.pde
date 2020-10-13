@@ -5,11 +5,12 @@ background(183,85,105);
 strokeWeight(10);
 stroke(targetstroke); 
 fill(targetcolour);
+//target
 circle(x,y,d1);
 strokeWeight(1);
 x=x+vx;
 y=y+vy;
-//get ball to bounce
+//get target to bounce
 if(x < 50 || x > width-50){
   vx = vx * -1;
  }
@@ -29,7 +30,7 @@ rect(90,65,10,40);
 rect(110,65,10,40);}
 
 void gameClicks(){
-  //initialize score
+  //initialize point scored
   if(dist(mouseX,mouseY,x,y)<d1/2+10){
     coin.rewind();
     coin.play();
@@ -43,8 +44,9 @@ void gameClicks(){
        bump.rewind();
    bump.play();
       lives=lives-1;} 
-   
+   //initialize gameover
    if(lives==0){
+     gameOver.rewind();
      mode=gameover;}
    
    

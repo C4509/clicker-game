@@ -15,6 +15,7 @@ final int options = 1;
 final int game =  2;
 final int pause = 3;
 final int gameover = 4;
+final int areyousure = 5;
 int sliderY;
 float x,y,d1,d2,d3,d4,d5;
 float vx,vy;
@@ -56,9 +57,10 @@ void setup() {
   vy=random(-5,5);
   highscore=0;
   minim = new Minim(this);
-  bump=minim.loadFile("smb_bump.wav");
-  coin=minim.loadFile("Super Mario Bros. - Coin Sound Effect.mp3");
-  music=minim.loadFile("funk.mp3");
+  bump=minim.loadFile("smb_bump.wav");//life lost sound effect
+  coin=minim.loadFile("coin.wav");//sound effect for point scored
+  gameOver=minim.loadFile("gameover.wav");//game over sound effect
+  music=minim.loadFile("funk.mp3");//game theme music
   arial=createFont("arial.ttf",80);
 }
 void draw() {
@@ -72,6 +74,8 @@ void draw() {
     pause();
   } else if (mode==gameover) {
     gameover();
+  } else if (mode==areyousure) {
+    confirm();
   }
   else{println("Error: Mode = " + mode);}
 }

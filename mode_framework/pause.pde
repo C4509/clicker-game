@@ -1,5 +1,7 @@
   void pause(){
+    music.pause();
     fill(255);
+    //pause button
     rect(73,55,65,65);
     text("pause",400,400);
     fill(0);
